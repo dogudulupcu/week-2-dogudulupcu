@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "43f3e407-5e03-4a72-bd0a-519bbf5eeb73",
+		"name": "KredinBizden",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17046345"
+	},
+	"item": [
+		{
+			"name": "Create Loan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"amount\": 50,\r\n  \"installment\": 50,\r\n  \"interestRate\":1.2,\r\n  \"vehicleInformation\":\"audi Rs7\",\r\n  \"vehicleStatuType\": \"USED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/loans/vehicleLoan",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loans",
+						"vehicleLoan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deneme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBank",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"muratBank\",\r\n    \"bankInterestRate\":2.87\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/banks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"banks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddApplicationLoan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"applicationId\": 2,\r\n\"VehicleLoan\": {\r\n            \"amount\": 1000,\r\n            \"installment\": 12,\r\n            \"bank\": {\r\n                \"name\": \"Akbank\",\r\n                \"loanList\": null,\r\n                \"creditCards\": null\r\n            },\r\n            \"interestRate\": 1.2,\r\n            \"loanType\": \"IHTIYAC_KREDISI\"\r\n        },\r\n        \"user\": {\r\n            \"name\": \"Ali\",\r\n            \"surname\": \"Veli\",\r\n            \"email\": \"aliveli@gmail.com\",\r\n            \"password\": \"1234567890\",\r\n            \"phoneNumber\": \"5309434390\",\r\n            \"applicationList\": null,\r\n            \"active\": true\r\n        },\r\n        \"amount\":3131,\r\n        \"localDateTime\":\"1998-11-14\",\r\n        \"applicationStatus\":\"INITIAL\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/applications",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Email ile Kullanıcının bütün başvurları",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/applications/cemdrman@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applications",
+						"cemdrman@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostCurrentOrderByDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/campaigns/inOrder",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"campaigns",
+						"inOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Creditcard by bank and their campaigns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/creditCards",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"creditCards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
